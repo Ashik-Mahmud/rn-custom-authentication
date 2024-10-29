@@ -1,3 +1,5 @@
+import LineChartComponent from "@/components/Charts/LineChart";
+import LineChartV2 from "@/components/Charts/LineChartV2";
 import { useSession } from "@/context/AuthContext";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
@@ -7,12 +9,14 @@ export default function HomeScreen() {
   const { signOut, session } = useSession();
 
   return (
-    <SafeAreaView
-      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-    >
+    <SafeAreaView style={{}}>
       <StatusBar style="dark" />
-      <View className="flex-1 justify-center items-center">
-        <Text style={{ fontSize: 33 }}>
+
+      {/* <LineChartComponent /> */}
+      <LineChartComponent />
+      <LineChartV2 />
+      <View className=" text-center p-10 ">
+        <Text style={{ fontSize: 16 }}>
           Hi, <Text className="text-green-500">React Native</Text> {session}
         </Text>
         <Text

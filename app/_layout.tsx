@@ -6,6 +6,7 @@ import "react-native-reanimated";
 
 import { SessionProvider } from "@/context/AuthContext";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,8 +28,10 @@ export default function RootLayout() {
   }
 
   return (
-    <SessionProvider>
-      <Slot />
-    </SessionProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SessionProvider>
+        <Slot />
+      </SessionProvider>
+    </GestureHandlerRootView>
   );
 }
